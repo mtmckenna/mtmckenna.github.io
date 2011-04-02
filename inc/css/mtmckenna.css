@@ -1,0 +1,41 @@
+html {
+	/*height:100%;*/
+  	/*font-size: 12pt;*/
+    font-family: Georgia, Serif;
+}
+
+body {
+    background:#C8BEA8;
+	margin:10px 10px 10px 10px; 
+    padding:0px;
+	text-align:center;
+}
+	
+#content {
+    background:#E4DBC8;
+	width:500px;
+	margin:0px auto 0px auto;
+	text-align:left;
+	padding-left: 10px;
+    padding-right: 5px;
+    border:1px dashed #333;
+}
+
+li {
+    list-style-type:none; 
+}
+a:link {
+    color:#55524C;
+}
+
+a:visited { 
+	color:#55524C;
+}
+
+a:hover { 
+	color:#4A3C20;
+}
+
+a:active { 
+	color:#6B5B38;
+}
