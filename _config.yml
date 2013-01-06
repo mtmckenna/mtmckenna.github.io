@@ -1,0 +1,10 @@
+markdown: maruku
+auto: true
+pygments: true
+#baseurl: /posts
+permalink: /posts/:year/:month/:day/:title
+exclude: ["README.md", "LICENSE.md", "TODO.md", "build", "test", "rsync.sh"]
+
+#owner-name: Matt McKenna
+#owner-page: http://mtmckenna.com
+#owner-email: matt@mtmckenna.com
