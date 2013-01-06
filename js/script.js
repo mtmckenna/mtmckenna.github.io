@@ -137,7 +137,7 @@ $(window).resize(function() {
     app.buildGrid();
 });
 
-$(window).on('scroll', function(e) {
+$(window).scroll(function () {
   var distance = $(this).scrollTop();
   var docHeight = $(document).height();
   var winHeight = $(window).height();
