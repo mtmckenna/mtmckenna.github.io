@@ -1,10 +1,26 @@
-markdown: maruku
-auto: true
-pygments: true
-#baseurl: /posts
-permalink: /posts/:year/:month/:day/:title
-exclude: ["README.md", "LICENSE.md", "TODO.md", "build", "test", "rsync.sh"]
+# Jekyll configuration precedence:
+# 1. Gruntfile task
+# 2. config.build.yml
+# 3. config.yml
 
-#owner-name: Matt McKenna
-#owner-page: http://mtmckenna.com
-#owner-email: matt@mtmckenna.com
+name: Matt McKenna
+description: I am a writer, engineer, and filmmaker in Berkeley, California.
+author:
+  name: Matt McKenna
+  email: matt@mtmckenna.com
+
+# Grunt handles images and assets.
+exclude: ['img', 'css', 'js', 'fonts',
+          '**.png', '**.jpg', '**.jpeg', '**.gif', '**.webp', '**.svg', '**.ico']
+
+include: ['.htaccess']
+
+# _config.build.yml sets future and show_drafts to false on `grunt build`
+future: true
+show_drafts: true
+
+# Markdown library
+markdown: redcarpet
+#   extensions: ['fenced_code_blocks', 'smart']
+
+pygments: true
