@@ -13,28 +13,65 @@
 html, body { height: 100%; }
 
 body {
-  background-color: #FFF;
-  /*font: 13.34px Helvetica, Arial, sans-serif;*/
+  /*background-color: #FFF;*/
+  /*background-color: #b7c3d7;*/
+  background-color: #000;
   font-family: 'Libre Baskerville', serif;
   font-size: small;
   text-align: center;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-size: 100%; }
+  font-size: 100%;
+  font-family: 'Libre Baskerville', serif;
+}
 
 h1 { margin-bottom: 1em; }
 p { margin: 1em 0; }
 
-a         { color: #00a; }
-a:hover   { color: #000; }
-a:visited { color: #a0a; }
+/*****************************************************************************/
+/*
+/* Colors
+/*
+/*****************************************************************************/
+
+$link-color: #4e6181;
+$visited-link-color: #485366;
+$hover-link-color: #a88587;
+$column-background-color: rgba(220, 233, 255, 0.8);
 
 /*****************************************************************************/
 /*
 /* Home
 /*
 /*****************************************************************************/
+
+.hello-list {
+  padding-top: 0;
+}
+
+.mydoings-list {
+  margin: 0;
+  padding: 0 0 0 0;
+
+  ul {
+    padding: 0;
+    margin: 0 5px 0 5px;
+  }
+
+  h1 {
+    font-size: 1.25em;
+    font-style: italic;
+    font-weight: 600;
+  }
+
+  li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
 .posts {
   list-style-type: none;
   margin-bottom: 2em;
@@ -46,7 +83,6 @@ a:visited { color: #a0a; }
 
 .posts span {
   color: #aaa;
-  /*font-family: Monaco, "Courier New", monospace;*/
   font-size: 80%;
 }
 
@@ -58,20 +94,37 @@ a:visited { color: #a0a; }
 
 .site {
   font-size: 115%;
-  text-align: justify;
-  width: 42em;
-  margin: 3em auto 2em;
+  text-align: left;
   line-height: 1.5em;
+  height: 100%;
+}
+
+a {
+  color: $link-color;
+  text-decoration: underline;
+}
+
+a:hover   {
+  color: $hover-link-color;
+}
+
+a:visited {
+  color: $visited-link-color;
+}
+
+#column {
+  background-color: $column-background-color;
+  z-index: 1;
 }
 
 .header a {
   font-weight: bold;
-  text-decoration: none;
 }
 
 .title {
-  display: inline-block;
-  margin-bottom: 2em;
+  margin: 0;
+  text-align: center;
+  font-size: 2em;
 }
 
 .title a {
@@ -97,15 +150,12 @@ a:visited { color: #a0a; }
 
 .footer {
   font-size: 80%;
-  color: #666;
-  border-top: 4px solid #eee;
   margin-top: 2em;
   overflow: hidden;
 }
 
 .footer .contact {
-  float: left;
-  margin-right: 3em;
+  float: right;
 }
 
 .footer .contact a {
@@ -120,6 +170,20 @@ a:visited { color: #a0a; }
 
 .footer .rss img {
   border: 0;
+}
+
+#earth {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  width: 250px;
+}
+
+#moon {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 
 /*****************************************************************************/

@@ -1,7 +1,7 @@
 {
-  "name": "mtmckenna3",
+  "name": "mtmckenna.com",
   "version": "0.0.0",
-  "description": "Yeoman workflow for mtmckenna3",
+  "description": "Yeoman workflow for mtmckenna.com",
   "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.1",

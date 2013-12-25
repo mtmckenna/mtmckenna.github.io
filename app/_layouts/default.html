@@ -1,50 +1,73 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{{ page.title }}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>{{ page.title }}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!-- build:css({app,.tmp}) /css/main.css -->
-        <!-- Syntax highlighting CSS -->
-        <link rel="stylesheet" href="/css/syntax.css">
+<!-- build:css({app,.tmp}) /css/main.css -->
+<!-- Syntax highlighting CSS -->
+<link rel="stylesheet" href="/css/syntax.css">
 
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="/_bower_components/bootstrap/dist/css/bootstrap.css">
-        <link rel="stylesheet" href="/_bower_components/bootstrap/dist/css/bootstrap-theme.css">
-        <link rel="stylesheet" href="/css/main.css">
-        <!-- endbuild -->
+<!-- Custom CSS -->
+<link rel="stylesheet" href="/_bower_components/bootstrap/dist/css/bootstrap.css">
+<link rel="stylesheet" href="/_bower_components/bootstrap/dist/css/bootstrap-theme.css">
+<link rel="stylesheet" href="/css/main.css">
+<!-- endbuild -->
 
-        <!-- Fonts, hey, hey, hey -->
-        <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville' rel='stylesheet' type='text/css'>
+<!-- Fonts, hey, hey, hey -->
+<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville' rel='stylesheet' type='text/css'>
 
-    </head>
-    <body>
+<!-- If I were an icon, doo-ba-doo-ba-doo -->
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-60x60.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-152x152.png" />
 
-        <div class="site">
-          <div class="header">
-            <h1 class="title"><a href="mailto:matt@mtmckenna.com">{{ site.name }}</a></h1>
-            <a class="extra" href="/">home</a>
-          </div>
+</head>
+<body>
 
-          {{ content }}
+<div class="site container">
+  <div class="col-md-2"></div>
 
-          <div class="footer">
-            <div class="contact">
-              <p>
-                Say hello:  
-                <a href="mailto:matt@mtmckenna.com">matt@mtmckenna.com</a>
-              </p>
-            </div>
-          </div>
-        </div>
+  <div class="col-sm-12 col-md-8" id="column">
+    <div class="header">
+      <h1 class="title"><a href="mailto:matt@mtmckenna.com">{{ site.name }}</a></h1>
+    </div>
 
-        <script src="/_bower_components/modernizr/modernizr.js"></script>
-        <script src="/_bower_components/jquery/jquery.js"></script>
-        <script src="/_bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <!-- build:js({app,.tmp}) /js/scripts.js -->
-    <script src="/js/main.js"></script>
-    <!-- endbuild -->
-    </body>
+    {{ content }}
+
+    <div class="footer">
+      <div class="contact">
+        <p>
+        Say hello:  
+        <a href="mailto:matt@mtmckenna.com">matt@mtmckenna.com</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-2"></div>
+
+  <script src="/_bower_components/modernizr/modernizr.js"></script>
+  <script src="/_bower_components/jquery/jquery.js"></script>
+  <script src="/_bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <!-- build:js({app,.tmp}) /js/scripts.js -->
+  <script src="/js/main.js"></script>
+  <script src="/js/earth_mover.js"></script>
+  <!-- endbuild -->
+</div>
+
+<img alt="Earth, man" id="earth" src="/img/bg-earth.gif" />
+<img alt="Mooooooon" id="moon" src="/img/bg-moon.gif" />
+<canvas id="bg-canvas" width="100" height="100"></canvas>
+
+</body>
 </html>
