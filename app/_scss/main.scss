@@ -82,7 +82,7 @@ $column-background-color: rgba(220, 233, 255, 0.8);
 }
 
 .posts span {
-  color: #aaa;
+  color: #3a3a57;
   font-size: 80%;
 }
 
@@ -92,11 +92,20 @@ $column-background-color: rgba(220, 233, 255, 0.8);
 /*
 /*****************************************************************************/
 
+#gravatar {
+  float: left;
+  padding: 0 0 10px 0;
+}
+
 .site {
   font-size: 115%;
   text-align: left;
   line-height: 1.5em;
   height: 100%;
+}
+
+ul, ol {
+  list-style-position: inside;
 }
 
 a {
@@ -105,6 +114,10 @@ a {
 }
 
 a:hover   {
+  color: $hover-link-color;
+}
+
+a:visited:hover {
   color: $hover-link-color;
 }
 
@@ -123,6 +136,7 @@ a:visited {
 
 .title {
   margin: 0;
+  padding-top: 10px;
   text-align: center;
   font-size: 2em;
 }
@@ -136,7 +150,7 @@ a:visited {
 }
 
 .header a.extra {
-  color: #aaa;
+  color: #3a3a57;
   margin-left: 1em;
 }
 
@@ -145,7 +159,7 @@ a:visited {
 }
 
 .meta {
-  color: #aaa;
+  color: #3a3a57;
 }
 
 .footer {
@@ -156,6 +170,10 @@ a:visited {
 
 .footer .contact {
   float: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 0 10px 10px 0;
 }
 
 .footer .contact a {
@@ -191,6 +209,13 @@ a:visited {
 /* Posts
 /*
 /*****************************************************************************/
+
+.post {
+  h2 {
+    text-align: center;
+    font-size: 1.25em;
+  }
+}
 
 /* standard */
 .post pre {

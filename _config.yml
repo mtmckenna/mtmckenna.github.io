@@ -8,6 +8,7 @@ description: I am a writer, engineer, and filmmaker in Berkeley, California.
 author:
   name: Matt McKenna
   email: matt@mtmckenna.com
+permalink: /posts/:year/:month/:day/:title
 
 # Grunt handles images and assets.
 exclude: ['img', 'css', 'js', 'fonts',
