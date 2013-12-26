@@ -1,1 +1,1 @@
-s3cmd sync --recursive --acl-public _site/ s3://www.mtmckenna.com/
+s3cmd sync --recursive --acl-public dist/ s3://www.mtmckenna.com/
