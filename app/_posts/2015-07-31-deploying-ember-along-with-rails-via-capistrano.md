@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Deploy Your Ember App Along With Your Ruby on Rails App
+title: Deploy Your Ember App Along With Your Ruby on Rails App via Capistrano
 ---
 
 [deploy-video]: https://www.youtube.com/watch?v=4EDetv_Rw5U
