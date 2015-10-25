@@ -2,8 +2,8 @@
   "name": "mtmckenna3",
   "version": "0.0.0",
   "dependencies": {
-    "bootstrap": "",
-    "jquery": "",
-    "modernizr": ""
+    "bootstrap": "~3.3.5",
+    "jquery": "~2.1.4",
+    "modernizr": "~3.1.0"
   }
 }
