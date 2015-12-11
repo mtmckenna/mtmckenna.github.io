@@ -8,6 +8,58 @@ title: Shell Script to Deploy and Activate Your Ember App to S3
 [ember-deploy-s3]: https://github.com/LevelbossMike/ember-deploy-s3
 [ember-deploy-s3-index]: https://github.com/Kerry350/ember-deploy-s3-index
 [script-gist]: https://gist.github.com/mtmckenna/2bbce8c14f520c78088b
+[ember-cli-deploy-dotenv]: http://ember-cli.com/ember-cli-deploy/docs/v0.5.x/dotenv-support/
+
+## *Update*
+
+As Kori points out in the comments, version 0.5.0 of ember-cli-deploy now does most of what this shell script does, which is super great.
+
+More specifically, ember-cli-deploy [supports .env files][ember-cli-deploy-dotenv], so you can place your AWS credentials in a
+`.env.deploy.production` file within your root project directly like so:
+
+```
+AWS_KEY=<your key>
+AWS_SECRET=<your secret>
+```
+
+You can then update your `config/deploy.js` file to use the environment variables listed in `.env.deploy.production` and activate the latest revision when you deploy. My `deploy.js` file looks like this:
+
+```
+module.exports = function(deployTarget) {
+  var ENV = {
+    build: {}
+  };
+
+  ENV.pipeline = {
+    activateOnDeploy: true
+  };
+
+  if (deployTarget === 'production') {
+    ENV.build.environment = 'production';
+
+    ENV['s3'] = {
+      accessKeyId: process.env['AWS_KEY'],
+      secretAccessKey: process.env['AWS_SECRET'],
+      bucket: <assets-bucket-name>,
+      region: 'us-east-1',
+      filePattern: '**/*.{js,css,png,gif,ico,jpg,map,xml,txt,svg,swf,eot,ttf,woff,woff2,wav}'
+    }
+
+    ENV['s3-index'] = {
+      accessKeyId: process.env['AWS_KEY'],
+      secretAccessKey: process.env['AWS_SECRET'],
+      bucket: <index-bucket-name>,
+      region: 'us-east-1'
+    }
+  }
+
+  return ENV;
+};
+```
+
+Once your `deploy.js` file is ready ready to go, you can deploy your Ember app with just one command: `ember deploy production`.
+
+Thanks to the ember-cli-team for simplifying the deployment process!
 
 ## Introduction
 
