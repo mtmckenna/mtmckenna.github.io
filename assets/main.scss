@@ -1,0 +1,62 @@
+---
+---
+
+@import "minima";
+
+body {
+  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+}
+
+a {
+  text-decoration: underline;
+}
+
+a:link {
+  color: #000;
+}
+
+a:visited {
+  color: #000;
+}
+
+a:hover {
+  color: #000;
+}
+
+a:active {
+  color: #000;
+}
+
+.project-section-list {
+  list-style: none;
+  padding: 0 0 10px 0;
+  margin: 0;
+}
+
+.projects-list {
+  list-style: none;
+  padding: 0 0 10px 0;
+  margin: 0;
+
+  li {
+    padding-left: 15px;
+  }
+}
+
+.social-media-list {
+  a {
+    text-decoration: none;
+  }
+}
+
+.page-heading {
+  margin-bottom: 0;
+}
+
+.clearfix {
+  overflow: auto;
+}
+
+#webgl-cube {
+  float: right;
+}
