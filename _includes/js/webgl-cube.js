@@ -1,3 +1,4 @@
+
 var that = this;
 var canvas = document.getElementById('webgl-cube');
 var cubeHeight = document.getElementById('title-cube-wrapper').clientHeight;
@@ -16,7 +17,6 @@ var MAX_ROTATION_SPEED = 0.025;
 
 var VERTEX_SHADER =
   'attribute vec3 position; \n' +
-  'attribute vec3 color; \n' +
   'uniform mat4 modelMatrix; \n' +
   'uniform mat4 viewMatrix; \n' +
   'uniform mat4 projectionMatrix; \n' +
@@ -145,10 +145,6 @@ function rotateCube(modelMatrix, rotationSpeedHash) {
 
 function configureVerticesForCube(gl, program, vertices) {
   configureBuffer(gl, program, vertices, 3, 'position');
-}
-
-function configureColorsForCube(gl, program, colors) {
-  configureBuffer(gl, program, colors, 3, 'color');
 }
 
 function newModelMatrix() {
