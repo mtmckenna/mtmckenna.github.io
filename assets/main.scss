@@ -59,6 +59,7 @@ a:active {
 
 #webgl-cube {
   float: right;
+  -webkit-tap-highlight-color: transparent;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
