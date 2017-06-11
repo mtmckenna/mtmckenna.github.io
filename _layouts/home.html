@@ -1,5 +1,6 @@
 ---
 layout: default
+num_posts: 5
 ---
 
 <div class="home">
@@ -7,6 +8,48 @@ layout: default
   {{ content }}
 
   <ul class="project-section-list">
+    <li>
+      <h1 class="page-heading">Posts</h1>
+      <ul class="projects-list">
+        {% for post in site.posts %}
+          {% if forloop.index > layout.num_posts %}
+            {% break %}
+          {% endif %}
+
+          <li>
+            <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+            ({{ post.date | date: "%Y-%m-%d" }})
+          </li>
+
+        {% endfor %}
+        <li><a href="/all-posts">More posts...</a></li>
+      </ul>
+    </li>
+
+    <li>
+      <h1 class="page-heading">Software</h1>
+      <ul class="projects-list">
+        <li><a href="https://www.spacepizzas.com">Space Pizzas</a> - Multiplayer game in Ember/Three.js/Node/Rails</li>
+        <li><a href="https://www.croissantthepizzacat.com">Croissant the Pizza Cat</a> - Game in Ember/JavaScript starring Croissant</li>
+        <li><a href="http://hoops.spacepizzas.com">Croissant Hoops</a> - Basketball game in GlimmerJS/JavaScript</li>
+        <li><a href="https://itunes.apple.com/us/app/no-budget-slate/id590309536?ls=1&mt=8">No Budget Slate</a> - Minimalist film slate for iPhone / iPad</li>
+        <li><a href="http://www.whopaidthem.com">WhoPaidThem.com</a> - Quiz app to challenge political funding preconceptions</li>
+        <li><a href="http://mtmckenna.github.com/green-button-grapher/">Green Button Grapher</a> - JavaScript tool to graph Green Button utility data</li>
+        <li><a href="http://tpr.mtmckenna.com">Cal Auto Toilet Paper Replacer</a> - Undergraduate mechanical engineering project</li>
+      </ul>
+    </li>
+
+    <li>
+      <h1 class="page-heading">Talks</h1>
+      <ul class="projects-list">
+        <li><a href="https://speakerdeck.com/mtmckenna/webgl-in-ember">WebGL in Ember</a> (2017-01-24)</li>
+        <li><a href="https://www.youtube.com/watch?v=t9v3CBowdxw">Build a Game in Ember Starring Your Cat</a> (2016-03-30)</li>
+        <li><a href="https://vimeo.com/165647735">Make a Game in Ember</a> (2016-04-06)</li>
+        <li><a href="https://speakerdeck.com/mtmckenna/build-a-game-in-javascript-starring-your-cat">Build a Game in JavaScript Starring Your Cat</a> (2016-02-16)</li>
+        <li><a href="https://speakerdeck.com/mtmckenna/pizza-vs-memory-leaks">Pizza vs. Memory Leaks</a> (2016-02-22)</li>
+      </ul>
+    </li>
+
     <li>
       <h1 class="page-heading">Films</h1>
       <ul class="projects-list">
@@ -29,48 +72,12 @@ layout: default
     </li>
 
     <li>
-      <h1 class="page-heading">Talks</h1>
-      <ul class="projects-list">
-        <li><a href="https://speakerdeck.com/mtmckenna/webgl-in-ember">WebGL in Ember</a> (2017-01-24)</li>
-        <li><a href="https://www.youtube.com/watch?v=t9v3CBowdxw">Build a Game in Ember Starring Your Cat</a> (2016-03-30)</li>
-        <li><a href="https://vimeo.com/165647735">Make a Game in Ember</a> (2016-04-06)</li>
-        <li><a href="https://speakerdeck.com/mtmckenna/build-a-game-in-javascript-starring-your-cat">Build a Game in JavaScript Starring Your Cat</a> (2016-02-16)</li>
-        <li><a href="https://speakerdeck.com/mtmckenna/pizza-vs-memory-leaks">Pizza vs. Memory Leaks</a> (2016-02-22)</li>
-      </ul>
-    </li>
-
-    <li>
-      <h1 class="page-heading">Software</h1>
-      <ul class="projects-list">
-        <li><a href="https://www.spacepizzas.com">Space Pizzas</a> - Multiplayer game in Ember/Three.js/Node/Rails</li>
-        <li><a href="https://www.croissantthepizzacat.com">Croissant the Pizza Cat</a> - Game in Ember/JavaScript starring Croissant</li>
-        <li><a href="http://hoops.spacepizzas.com">Croissant Hoops</a> - Basketball game in GlimmerJS/JavaScript</li>
-        <li><a href="https://itunes.apple.com/us/app/no-budget-slate/id590309536?ls=1&mt=8">No Budget Slate</a> - Minimalist film slate for iPhone / iPad</li>
-        <li><a href="http://www.whopaidthem.com">WhoPaidThem.com</a> - Quiz app to challenge political funding preconceptions</li>
-        <li><a href="http://mtmckenna.github.com/green-button-grapher/">Green Button Grapher</a> - JavaScript tool to graph Green Button utility data</li>
-        <li><a href="http://tpr.mtmckenna.com">Cal Auto Toilet Paper Replacer</a> - Undergraduate mechanical engineering project</li>
-      </ul>
-    </li>
-
-    <li>
       <h1 class="page-heading">Profiles</h1>
       <ul class="projects-list">
         <li><a href="https://github.com/mtmckenna/">GitHub</a></li>
         <li><a href="http://www.linkedin.com/in/mtmckenna">LinkedIn</a></li>
         <li><a href="http://www.imdb.com/name/nm2333668/">IMDb</a></li>
         <li><a href="http://www.youtube.com/user/mtmckenna">YouTube</a></li>
-      </ul>
-    </li>
-
-    <li>
-      <h1 class="page-heading">Posts</h1>
-      <ul class="projects-list">
-        {% for post in site.posts %}
-          <li>
-            <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-            ({{ post.date | date: "%Y-%m-%d" }})
-          </li>
-        {% endfor %}
       </ul>
     </li>
   </ul>
