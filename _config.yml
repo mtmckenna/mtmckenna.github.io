@@ -36,3 +36,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
 livereload: true
+gems:
+  - jekyll-redirect-from
+whitelist:
+  - jekyll-redirect-from
