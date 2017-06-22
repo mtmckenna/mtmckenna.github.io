@@ -11,7 +11,7 @@ canvas.height = cubeHeight;
   });
 });
 
-var gl = canvas.getContext('webgl');
+var gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
 
 var MAX_ROTATION_SPEED = 0.025;
 
