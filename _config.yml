@@ -30,11 +30,10 @@ js_files:
 # Build settings
 markdown: kramdown
 theme: minima
-gems:
+plugins:
   - jekyll-feed
+  - jekyll-redirect-from
 exclude:
   - Gemfile
   - Gemfile.lock
 livereload: true
-gems:
-  - jekyll-redirect-from
