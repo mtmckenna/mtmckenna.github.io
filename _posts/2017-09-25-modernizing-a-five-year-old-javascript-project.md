@@ -3,7 +3,7 @@ layout: post
 title: Modernizing a Five-Year-Old JavaScript Project
 ---
 
-![Rotating 3D model of a building](/images/green-button-grapher.gif)
+![GIF of the Green Button Grapher app](/images/green-button-grapher.gif)
 
 Languishing on my GitHub account is a five-year-old JavaScript app called ["Green Button Grapher"](https://github.com/mtmckenna/green-button-grapher) that parses and charts [Green Button Data](http://www.greenbuttondata.org/) (power usage data that utility companies provide to consumers as XML files via their websites).
 
