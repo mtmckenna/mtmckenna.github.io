@@ -5,6 +5,8 @@ title: Creating a Canvas Overlay
 
 [![Basketball Bouncing Over the DOM](/images/creating-a-canvas-overlay.gif)](https://mtmckenna.github.io/creating-a-canvas-overlay/)
 
+<i>[Check out the example above on GitHub pages.](https://mtmckenna.github.io/creating-a-canvas-overlay/)</i>
+
 The [HTML canvas element](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) is great for [creating games in JavaScript](https://www.basketbalrog.com), but it can also be used to add a little bit of flare to a regular old website.
 
 For example, I recently added a canvas overlay to [Basketbalrog](https://www.basketbalrog.com) that adds a tiny interactive basketball to the screen while still allowing a user to click on the links underneath the canvas and use the website as expected.
