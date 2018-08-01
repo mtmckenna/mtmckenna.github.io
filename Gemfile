@@ -5,17 +5,16 @@ require 'json'
 require 'open-uri'
 versions = JSON.parse(open('https://pages.github.com/versions.json').read)
 
-gem 'jekyll', '~> 3.3', '>= 3.3.1'
-gem 'github-pages', versions['github-pages']
+gem 'jekyll'
 
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
-gem "minima", "~> 2.0"
+gem "minima"
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.6"
-  gem "jekyll-livereload"
+  gem "jekyll-feed"
   gem 'jekyll-redirect-from'
+  gem 'github-pages'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
