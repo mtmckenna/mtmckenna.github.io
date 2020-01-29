@@ -100,6 +100,6 @@ A major benefit of Ember and ember-cli is that there is a community-maintained u
 
 ## Try It Out
 
-The newest version of the [Green Button Grapher is on GitHub Pages](https://www.mtmckenna.com/green-button-grapher/). Try it out using your own Green Button Data downloaded from your utility company’s website ([here are instructions for downloading Green Button Data from PG&E](https://energy.gov/sites/prod/files/Using%20Green%20Button%20Download.pdf
+The newest version of the [Green Button Grapher is on GitHub Pages](https://mtmckenna.github.io/green-button-grapher/). Try it out using your own Green Button Data downloaded from your utility company’s website ([here are instructions for downloading Green Button Data from PG&E](https://energy.gov/sites/prod/files/Using%20Green%20Button%20Download.pdf
 )). If you find bugs or have suggestions, please feel free to email me.
 
