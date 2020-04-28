@@ -3,8 +3,7 @@ layout: post
 title: Compiling a C++ OpenGL Project for OS X and WebAssembly
 ---
 
-[![A colorful triangle in WASM](/images/opengl-osx-and-wasm.png)](https://wasm-triangle.netlify.com/)
-
+[![A colorful triangle in WASM](/images/opengl-osx-and-wasm.png)](https://wasm-triangle.mtmckenna.com)
 
 ## The Goal
 
@@ -12,7 +11,7 @@ I'm working on a C++/OpenGL project that I'm trying to compile for both native O
 
 While there are a lot of [helpful](https://uncovergame.com/2015/01/21/porting-a-complete-c-game-engine-to-html5-through-emscripten/) [resources](https://gist.github.com/isc30/d379e40cbe4f0f34a3ee9ddeda2666db) to get started programming in C++, [OpenGL](https://open.gl), and WASM, I couldn't find anything that exactly explained setting up a development workflow that allows me to build for both OS X and WASM. In this post, I'll go over the way I was able to get my workflow going.
 
-[Here's a link to the WASM version of the build](https://wasm-triangle.netlify.com/) you can see in your browser and [here's a link to the GitHub repo](https://github.com/mtmckenna/opengl-osx-wasm) containing all the files.
+[Here's a link to the WASM version of the build](https://wasm-triangle.mtmckenna.com) you can see in your browser and [here's a link to the GitHub repo](https://github.com/mtmckenna/opengl-osx-wasm) containing all the files.
 
 ## Dependencies
 
@@ -102,7 +101,5 @@ emcc --std=c++11 -Wall -Wextra -s WASM=1 -s USE_SDL=2 app.cpp -o wasm/app.html
 Additionally, here's a [node script](https://github.com/mtmckenna/opengl-osx-wasm/blob/master/scripts/server.js) in the repo to load the WASM build locally.
 
 ## And That's It!
-
-
 
 I'm sure there are more ways to do this sort of thing, so please let me know if you have any suggestions!
