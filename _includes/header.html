@@ -1,12 +1,20 @@
 <header class="site-header" role="banner">
+  <script
+    async
+    defer
+    data-domain="mtmckenna.com"
+    src="https://plausible.io/js/plausible.js"
+  ></script>
   <div class="wrapper">
     <div id="title-cube-wrapper" class="clearfix">
-      {% assign default_paths = site.pages | map: "path" %}
-      {% assign page_paths = site.header_pages | default: default_paths %}
-      {% if page.layout == 'home' %}
-        <a class="site-title" href="mailto:{{ site.email }}">{{ site.title | escape }}</a>
+      {% assign default_paths = site.pages | map: "path" %} {% assign page_paths
+      = site.header_pages | default: default_paths %} {% if page.layout ==
+      'home' %}
+      <a class="site-title" href="mailto:{{ site.email }}"
+        >{{ site.title | escape }}</a
+      >
       {% else %}
-        <a class="site-title" href="/">Back to home</a>
+      <a class="site-title" href="/">Back to home</a>
       {% endif %}
       <canvas id="webgl-cube" height="25" width="25"></canvas>
     </div>
