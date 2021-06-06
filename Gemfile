@@ -6,6 +6,7 @@ require 'open-uri'
 versions = JSON.parse(open('https://pages.github.com/versions.json').read)
 
 gem 'jekyll'
+gem 'eventmachine', '~> 1.2', platform: :ruby #https://github.com/jekyll/jekyll/pull/8111
 
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
 gem "minima"
