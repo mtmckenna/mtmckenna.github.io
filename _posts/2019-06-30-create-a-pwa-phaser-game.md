@@ -6,7 +6,7 @@ categories: [Blog]
 
 <strong>Note: The bulk of this post should still apply today since it covers how to build a PWA using open source tools. However, I wrote this post in relation to a web service called Superweb.app I built and have since taken down that was intended to make it easier to build PWAs.</strong>
 
-[![Gameplay Animation for Cat Tap]({{'/images/cat-tap-gameplay.gif'}})](https://cattap.mtmckenna.com)
+[![Gameplay Animation for Cat Tap]({{'/images/cat-tap-gameplay.gif'}}){:.center-item}](https://cattap.mtmckenna.com)
 
 Creating an offline-first progressive web app (PWA) has never been easier, but it's still pretty hard. In this post, we'll go over how you can convert a [Phaser](https://phaser.io/)-based game into an offline PWA using tools like Google's [Workbox](https://developers.google.com/web/tools/workbox/) and [Workbox Window](https://developers.google.com/web/tools/workbox/modules/workbox-window). When we're done, we'll have a game that 1) works even when offline and 2) can be installed onto the iOS home screen, the Android home screen, and desktops via Chrome.
 
@@ -88,7 +88,7 @@ When you make it through the wizard, you'll be shown the command to use to gener
 
 When you type the above command, Workbox will look for files to precache and populate a list of these files in `app/sw.js`. In fact, go ahead and take a look at `app/sw.js`--you should see a section that looks like this:
 
-```
+```javascript
 
 self.__precacheManifest = [
 
@@ -154,7 +154,7 @@ However, if you're interested in implementing the refresh-to-update pattern, you
 
 First we need to add the following code to the bottom of our `index.html`:
 
-```
+```javascript
 
 <script type="module">
 
@@ -210,7 +210,7 @@ First we need to add the following code to the bottom of our `index.html`:
 
 And then add the refresh UI inside the `<body>` tag in our `index.html` file:
 
-```
+```html
 
  <div class="superwebapp-refresh-box superwebapp-refresh-box-hidden">
 
@@ -226,7 +226,7 @@ And then add the refresh UI inside the `<body>` tag in our `index.html` file:
 
 Here's the styles for the refresh box, which you can place anywhere in your `index.html` file:
 
-```
+```css
 <style>
 .superwebapp-refresh-box {
   background-color: rgba(0, 0, 0, 0.7);
@@ -292,7 +292,7 @@ If you're interested in learning more about the service worker lifecycle and why
 
 There are a bunch of fields you can fill out in the Web App Manifest, but we'll just fill out the fields necessary to allow Chrome to "install" our app to the desktop. [Check out the list of other fields here](https://developer.mozilla.org/en-US/docs/Web/Manifest#Members). Save the following file to `app/manifest.webmanifest`:
 
-```
+```javascript
 
 {
 
@@ -328,7 +328,7 @@ Two fields that aren't super self-explanatory are `start_url` and `display`. `st
 
 Once you have the manifest created, you can link to it in your `index.html` file by adding the following line in the `<head>`:
 
-```
+```html
 
  <link rel="manifest" href="/manifest.webmanifest">
 
@@ -338,7 +338,7 @@ Once you have the manifest created, you can link to it in your `index.html` file
 
 For Chrome and Android devices, the Web App Manifest is all you need to have your app's icons show up properly on a home screen or desktop. However, Apple makes things a bit more difficult because it currently (as of iOS 12.2) doesn't pull icons from the manifest ([see this great article on PWAs in iOS for more info](https://medium.com/@firt/whats-new-on-ios-12-2-for-progressive-web-apps-75c348f8e945)). As a workaround, we can add the following lines to the `<head>` of our `index.html`:
 
-```
+```html
 
 <link rel="shortcut icon" type="image/x-icon" href="/assets/icon144.png" />
 

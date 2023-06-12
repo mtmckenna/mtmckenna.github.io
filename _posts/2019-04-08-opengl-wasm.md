@@ -3,7 +3,7 @@ layout: post
 title: Compiling a C++ OpenGL Project for OS X and WebAssembly
 ---
 
-[![A colorful triangle in WASM](/images/opengl-osx-and-wasm.png)](https://wasm-triangle.mtmckenna.com)
+[![A colorful triangle in WASM](/images/opengl-osx-and-wasm.png){:.center-item}](https://wasm-triangle.mtmckenna.com)
 
 ## The Goal
 
@@ -25,7 +25,7 @@ On OS X, it's easy enough to install all three dependencies with [Homebrew](http
 
 OS X and web browsers implement different versions of OpenGL: OS X supports OpenGL 2.0 (and higher) while web browsers support [WebGL](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API), which is based on OpenGL ES 2.0. Therefore, when building for OS X, I had to target OpenGL 2.0. When building for WASM, I targeted OpenGL ES 2.0. Here's the code that does that:
 
-```
+```cpp
 int main()
 {
   SDL_Init(SDL_INIT_EVERYTHING);
@@ -46,7 +46,7 @@ int main()
 
 [As the Emscripten docs mention](https://emscripten.org/docs/optimizing/Optimizing-WebGL.html#optimizing-load-times-and-other-best-practices), to not lock up the browser and instead take advantage of [`requestAnimationFrame`](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame), we can use `emscripten_set_main_loop` or its cousin `emscripten_set_main_loop_arg` in the WASM version rather than the infinite `while` loop in the OS X version. Here's how I ended up including both types of loops in my `app.cpp` file:
 
-```
+```cpp
 ...
  #if __EMSCRIPTEN__
   emscripten_set_main_loop(loop, -1, 1);
@@ -70,7 +70,7 @@ At least on my machine, I needed to specify the [GLSL](https://en.wikipedia.org/
 
 Here's an example of my vertex shader:
 
-```
+```glsl
 #version 100
 attribute vec2 position;
 attribute vec3 color;

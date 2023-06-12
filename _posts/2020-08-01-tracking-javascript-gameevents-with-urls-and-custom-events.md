@@ -3,7 +3,7 @@ layout: post
 title: Tracking JavaScript Game Events with URLs and Custom Events
 ---
 
-![Image of URL Analytics from Plausible.io](/images/plausible.png)
+![Image of URL Analytics from Plausible.io](/images/plausible.png){:.center-item}
 
 
 One underrated thing about making games for the web is how many options you have for tracking traffic and in-game events. Probably the most commonly used option is [Google Analytics](https://analytics.google.com/analytics/web/#/), which has the advantage of being free and allowing both URL tracking and [sending custom events](https://developers.google.com/analytics/devguides/collection/analyticsjs/sending-hits).
@@ -19,7 +19,7 @@ Re: URLs: In [Matt Fantasy](https://www.mattfantasy.com), menus and levels each 
 
 Re: custom events: To know that people are reaching a specific point in the game, I wanted to fire off events to Plausible after various in-game events occur (e.g. when the first cinematic ends, the first battle ends, etc.). Fortunately, [custom events like this are possible in Plausible](https://docs.plausible.io/custom-event-goals/), if not quite as automatic to set up as URL paths. Now that I’ve got a few custom events created, I was able to create some goals in Plausible:
 
-![Image of Custom Events Analytics from Plausible.io](/images/plausible2.png)
+![Image of Custom Events Analytics from Plausible.io](/images/plausible2.png){:.center-item}
 
 The only downside is that Plausible shows me how low my game traffic is right now... maybe a topic for another day.
 

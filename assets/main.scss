@@ -65,3 +65,19 @@ a:active {
   -ms-user-select: none;
   user-select: none;
 }
+
+.center-contents {
+  text-align: center;
+}
+
+.center-item {
+  margin: 0 auto;
+  display: block;
+}
+
+.iframe {
+  border: none;
+  width: 100%;
+  aspect-ratio: 1/1;
+  max-height: 500px;
+}

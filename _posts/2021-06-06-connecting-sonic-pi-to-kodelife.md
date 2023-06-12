@@ -3,7 +3,7 @@ layout: post
 title: Connecting Sonic Pi to KodeLife by Converting OSC Messages to MIDI
 ---
 
-![Image of KodeLife Reacting to Sonic Pi](/images/sonic-pi-kodelife.gif)
+![Image of KodeLife Reacting to Sonic Pi](/images/sonic-pi-kodelife.gif){:.center-item}
 
 I've been trying to learn a bit of [KodeLife](https://hexler.net/kodelife) and [Sonic Pi](https://sonic-pi.net/) to create images and sounds, and one thing I wanted to do that turned out to be trickier than expected is sending data messages from Sonic Pi to KodeLife so my shaders could react directly to data coming out of Sonic Pi. 
 
@@ -11,7 +11,7 @@ In this post, I'll describe how I set up a way to do this using the tools and ti
 
 [Here's a video](https://youtu.be/w3R8ok1fy20) of what it'll look like (also embedded below), and [here's a link to the GitHub repo](https://github.com/mtmckenna/sonic-pi-kode-life-osc) with both the KodeLife project and the Sonic Pi file.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/w3R8ok1fy20" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/w3R8ok1fy20" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" class="center-item" allowfullscreen></iframe>
 
 So we don't get totally lost, here's the list of steps we'll need to take to get this working:
 
@@ -34,7 +34,7 @@ Once osmid is compiled, you'll want to check that you can run the `o2m` server. 
 
 The next step is to send messages from Sonic Pi to osmid. The snippet below will play a note followed immediately by a "control change" OSC message on osmid's default port (57200).
 
-```
+```ruby
 use_osc "localhost", 57200
 beats = (range 1, 8)
 
@@ -51,7 +51,7 @@ end
 
 If you paste this code into Sonic Pi and run it with the `o2m` still running, you should hear the notes playing and see log messages appearing in your terminal window. The messages in your terminal window will likely be errors saying something to the effect of `Could not find the MIDI device specified in the OSC message: kodelife`. If you're seeing this error, it is likely because you haven't yet asked KodeLife to create a MIDI input.
 
-![Logs with errors coming in](/images/osc-osmid-kodelife-errors.png)
+![Logs with errors coming in](/images/osc-osmid-kodelife-errors.png){:.center-item}
 
 ## Receiving the MIDI Input in KodeLife
 
@@ -59,19 +59,19 @@ Finally, we're at the part where we can have our shader react to the OSC message
 
 To have KodeLife create a MIDI input, open KodeLife, go to File, then Preferences, then MIDI, and check the box of "Create MIDI Input".
 
-![Create MIDI Input](/images/osc-create-midi-input.png)
+![Create MIDI Input](/images/osc-create-midi-input.png){:.center-item}
 
 Once you check that box , you should start seeing the logs in osmid change to say something like `Sending MIDI to: KodeLife`.
 
-![Logs with no errors coming in](/images/osc-osmid-kodelife-no-errors.png)
+![Logs with no errors coming in](/images/osc-osmid-kodelife-no-errors.png){:.center-item}
 
 Now that the messages are getting through, we need to be able to read them into our KodeLife shader. To add the MIDI sampler to the shader, open the "Kontrol Panel" , click the "+" next to parameters, select "Built-in", "Input", "MIDI Channel". If this is the first MIDI channel you've added, the name will probably be something like "midi1".
 
-![Create MIDI Channel](/images/osc-create-midi-channel.png)
+![Create MIDI Channel](/images/osc-create-midi-channel.png){:.center-item}
 
 Now we have the complicated task of extracting the MIDI data out of the texture. [KodeLife's website has an explanation of how to do it](https://hexler.net/kodelife/manual/parameters-built-in), but it didn't quite work for me. [This post on GitHub was very helpful](https://github.com/dataneel/kodelife_midi), and got me over the hump (thank you!!). In the end, this ended up being my shader code:
 
-```
+```glsl
 #ifdef GL_ES
 precision mediump float;
 #endif
