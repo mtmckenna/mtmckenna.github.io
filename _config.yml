@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Matt McKenna
-email: matt@mtmckenna.com
+email: mtmckenna@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Software stuff in California.
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -22,7 +22,6 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 permalink: /posts/:year/:month/:day/:title
 twitter_username: mattmckenna
 github_username: mtmckenna
-google_analytics: UA-22416394-1
 js_files:
   - js/gl-matrix-min.js
   - js/webgl-cube.js
