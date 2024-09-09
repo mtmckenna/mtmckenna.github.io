@@ -9,8 +9,8 @@ title: All Posts
       <ul class="projects-list">
         {% for post in site.posts %}
           <li>
+            {{ post.date | date: "%Y" }} - 
             <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-            ({{ post.date | date: "%Y-%m-%d" }})
           </li>
         {% endfor %}
       </ul>

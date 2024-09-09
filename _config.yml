@@ -22,6 +22,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 permalink: /posts/:year/:month/:day/:title
 twitter_username: mattmckenna
 github_username: mtmckenna
+linkedin_username: mtmckenna
 js_files:
   - js/gl-matrix-min.js
   - js/webgl-cube.js
